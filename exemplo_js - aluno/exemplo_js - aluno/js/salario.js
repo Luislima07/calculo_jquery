@@ -13,14 +13,14 @@ $("#calcular").click(function () {
             bonus = 200;
     }
 
-    var dependentesBonus = 50;
-    var inss = salario * 0.08;
-    var vr = salario * 0.05;
-    var salarioLiquido = (salario - inss - vr + bonus) * dependentesBonus;
+    var dependentesBonus = 50 * dependentes;
+    var inss = (salario * 0.08).toFixed(2);
+    var vr = (salario * 0.05).toFixed(2);
+    var salarioLiquido = ((salario - inss - vr + bonus) + dependentesBonus).toFixed(2);
     alert("Seu nome é: " + nome);
     alert("Você tem: " + dependentes + " Dependentes");
     alert("Seu salário bruto é: " + salario);
     alert("Seu INSS é: R$" + inss);
-    alert("Seu vale-refeição é: R$" + vr);
+    alert("Seu vale-transporte é: R$" + vr);
     alert("Seu salário líquido é: R$" + salarioLiquido);
 })
